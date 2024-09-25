@@ -1,0 +1,23 @@
+.serv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__wrapper {
+    width: 1100px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 10px;
+  }
+
+  &__img {
+    width: 50px;
+  }
+}

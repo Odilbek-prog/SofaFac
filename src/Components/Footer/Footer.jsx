@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.scss";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/img/logo.png";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="footer__wrapper">
         <div className="footer__desc">
           <NavLink to="/" className="navbar__logo">
-            Brand Logo
+            <img className="logo" src={logo} alt="" />
           </NavLink>
           <p className="footer__text">
             'Bukhara Natural Product' has been a company for many years
