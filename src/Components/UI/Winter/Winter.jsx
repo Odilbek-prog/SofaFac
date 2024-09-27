@@ -1,8 +1,9 @@
 import React from "react";
 import "./Winter.scss";
+import { NavLink } from "react-router-dom";
+import Item from "../../../Pages/Item";
 
 const Winter = ({ data }) => {
-  console.log(data);
   return (
     <div className="winter">
       <div className="winter__wrapper">
@@ -14,10 +15,12 @@ const Winter = ({ data }) => {
           {data
             .filter((item) => item.category === "Winter collection")
             .map((item) => (
-              <div key={item.id} className="winter__card" data-aos="fade-up">
-                <img className="winter__img" src={item.img} alt="" />
-                <h3 className="winter__name">{item.name}</h3>
-              </div>
+              <NavLink className={"collection__links"} to={`/item/${item.id}`}>
+                <div key={item.id} className="winter__card" data-aos="fade-up">
+                  <img className="winter__img" src={item.img} alt="" />
+                  <h3 className="winter__name">{item.name}</h3>
+                </div>
+              </NavLink>
             ))}
         </div>
       </div>

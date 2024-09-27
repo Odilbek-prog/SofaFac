@@ -3,21 +3,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   &__wrapper {
-    width: 1100px;
+    max-width: 1100px;
     height: 200px;
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
     align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Stack cards vertically on smaller screens
+      height: auto; // Allow height to adjust
+      padding: 20px; // Add some padding for spacing
+    }
   }
+
   &__card {
     display: flex;
     align-items: center;
     gap: 30px;
     font-size: 10px;
+
+    @media (max-width: 768px) {
+      justify-content: center; // Center cards on smaller screens
+      margin-bottom: 20px; // Add spacing between cards
+      font-size: 12px; // Slightly increase font size for readability
+    }
+
+    @media (max-width: 480px) {
+      font-size: 10px; // Further adjust for very small screens
+    }
   }
 
   &__img {
     width: 50px;
+
+    @media (max-width: 768px) {
+      width: 40px; // Adjust image size on smaller screens
+    }
+
+    @media (max-width: 480px) {
+      width: 30px; // Further reduce image size for very small screens
+    }
   }
 }

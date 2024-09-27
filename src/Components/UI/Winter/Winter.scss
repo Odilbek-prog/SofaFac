@@ -4,33 +4,64 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+
   &__wrapper {
     width: 1100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
+
+    @media (max-width: 768px) {
+      width: 90%; // Use a percentage for better responsiveness
+    }
   }
+
   &__img {
     width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 25px;
+
+    @media (max-width: 768px) {
+      width: 150px; // Adjust image size for smaller screens
+      height: 150px;
+    }
   }
+
   &__cards {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center; // Center cards
+
+    @media (max-width: 768px) {
+      justify-content: center; // Ensure cards are centered on smaller screens
+    }
   }
+
   &__desc {
     display: flex;
     flex-direction: column;
     gap: 5px;
     align-items: center;
+
+    @media (max-width: 768px) {
+      align-items: center; // Center text on smaller screens
+    }
   }
+
   &__title {
     font-size: 2rem;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem; // Reduce font size for smaller screens
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.25rem; // Further reduce for very small screens
+    }
   }
 }

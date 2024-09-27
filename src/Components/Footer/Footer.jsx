@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__wrapper">
-        <div className="footer__desc">
+        <div className="footer__desc" data-aos="fade-up">
           <NavLink to="/" className="navbar__logo">
             <img className="logo" src={logo} alt="" />
           </NavLink>
@@ -16,7 +16,7 @@ const Footer = () => {
             producing cotton fabrics for use all over the world.
           </p>
         </div>
-        <div className="footer__menu">
+        <div className="footer__menu" data-aos="fade-up">
           <ul className="footer__ul">
             <h3 className="footer__title">Menu</h3>
             <li className="footer__list">
@@ -25,7 +25,7 @@ const Footer = () => {
               </NavLink>
             </li>
             <li className="footer__list">
-              <NavLink to="/collection" className="footer__link">
+              <NavLink to="/collection/page/1" className="footer__link">
                 Collection
               </NavLink>
             </li>
@@ -41,7 +41,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="footer__contact">
+        <div className="footer__contact" data-aos="fade-up">
           <h3 className="footer__title">Contact</h3>
           <p className="footer__address">Bukhara, st. Alpomysh 80.</p>
           <p className="footer__address">Bnpuz@bk.ru</p>

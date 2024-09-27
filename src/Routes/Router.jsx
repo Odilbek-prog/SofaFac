@@ -40,6 +40,7 @@ import Byzantium from "../assets/img/bzyantium.jpeg";
 import garden from "../assets/img/garden.jpeg";
 import Marquis from "../assets/img/feather.jpeg";
 import roses from "../assets/img/roses.jpeg";
+import Item from "../Pages/Item";
 
 const data = [
   {
@@ -471,7 +472,26 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<Home data={data} />} />
       <Route path="/about" element={<About />} />
-      <Route path="/collection" element={<Collection />} />
+      <Route path="/collection/page/1" element={<Collection data={data} />} />
+      <Route path="/collection/page/2" element={<Collection data={data} />} />
+      <Route path="/collection/page/3" element={<Collection data={data} />} />
+      <Route
+        path="/collection/page/spring"
+        element={<Collection data={data} />}
+      />
+      <Route
+        path="/collection/page/winter"
+        element={<Collection data={data} />}
+      />
+      <Route
+        path="/collection/page/summer"
+        element={<Collection data={data} />}
+      />
+      <Route
+        path="/collection/page/autumn"
+        element={<Collection data={data} />}
+      />
+      <Route path="/item/:id" element={<Item data={data} />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<Notfound />} />
     </Routes>

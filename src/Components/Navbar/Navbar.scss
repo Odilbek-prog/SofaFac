@@ -4,24 +4,69 @@
   justify-content: center;
   align-items: center;
   height: 100px;
+  position: relative;
+
   &__wrapper {
     width: 1100px;
     display: flex;
     align-items: center !important;
     gap: 30px;
+
+    @media (max-width: 768px) {
+      justify-content: space-between;
+    }
   }
+
   &__desc {
-    width: 80%;
     display: flex;
     justify-content: space-between;
+    width: 80%;
+
+    // @media (max-width: 768px) {
+    //   display: none; // Hide description on mobile
+    // }
   }
+
   &__ul {
     display: flex;
     list-style: none;
     align-items: center;
     justify-content: space-evenly;
     gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Stack items on mobile
+      position: absolute;
+      height: 90vh;
+      top: 70%;
+      left: 0;
+      background-color: #fff;
+      right: 0;
+      // Background color for dropdown
+      display: none; // Hidden by default
+      padding: 10px 0; // Add padding
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Shadow for dropdown
+      z-index: 100;
+
+      &.show {
+        display: flex !important; // Show when hamburger is clicked
+      }
+    }
   }
+  .navbar__ul.show {
+    animation: dropdown 0.5s ease-in-out;
+  }
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   &__link {
     color: gray;
     text-transform: capitalize;
@@ -30,14 +75,24 @@
     font-weight: 700 !important;
     text-decoration: none;
     letter-spacing: 1px;
+
+    @media (max-width: 768px) {
+      padding: 10px; // Add padding for clickable area
+    }
   }
+
   &__lang {
     width: 150px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid grey;
     font-size: 18px;
+
+    @media (max-width: 768px) {
+      display: none; // Hide language selector on mobile
+    }
   }
+
   &__logo {
     font-size: 25px;
     color: black;
@@ -46,5 +101,57 @@
     text-decoration: none;
     letter-spacing: 1px;
     cursor: pointer;
+  }
+
+  // Hamburger menu styles
+  &__hamburger {
+    display: none; // Hidden by default
+    flex-direction: column;
+    cursor: pointer;
+
+    div {
+      width: 30px;
+      height: 3px;
+      background-color: black;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      display: flex; // Show on mobile
+    }
+  }
+}
+
+// Responsive styles for devices with max width of 350px
+@media (max-width: 349px) {
+  .navbar {
+    height: 80px; // Adjust height for smaller screens
+
+    &__wrapper {
+      width: 100%; // Full width on smaller devices
+      flex-direction: column; // Stack items vertically
+      align-items: center; // Center items
+    }
+
+    &__desc {
+      width: 100%; // Full width for description
+      justify-content: center; // Center content
+    }
+
+    &__link {
+      font-size: 14px; // Smaller font size
+      letter-spacing: 0.5px; // Adjust letter spacing
+    }
+
+    &__lang {
+      width: auto; // Auto width for language selector
+      padding: 8px; // Adjust padding
+      font-size: 16px; // Smaller font size
+    }
+
+    &__logo {
+      font-size: 20px; // Smaller logo size
+    }
   }
 }

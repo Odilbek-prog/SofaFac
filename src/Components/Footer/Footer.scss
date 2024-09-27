@@ -5,11 +5,27 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+
   &__wrapper {
     width: 1100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Stack items on smaller screens
+      align-items: center;
+      width: 90%; // Use a percentage for better responsiveness
+    }
+    @media (max-width: 1105px) {
+      flex-direction: column; // Stack items on smaller screens
+      align-items: center;
+      width: 100%; // Use a percentage for better responsiveness
+    }
   }
+  &__text {
+    width: 300px;
+  }
+
   &__desc {
     display: flex;
     flex-direction: column;
@@ -18,23 +34,36 @@
     font-size: 17px;
     font-weight: 200;
     color: rgba(0, 0, 0, 0.6);
+
+    @media (max-width: 768px) {
+      width: 100%; // Full width on smaller screens
+      align-items: center; // Center items
+    }
   }
+
   &__ul {
     display: flex;
     list-style: none;
     gap: 10px;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+      align-items: center; // Center items on smaller screens
+    }
   }
+
   &__link {
     color: rgba(0, 0, 0, 0.6);
     text-decoration: none;
     font-weight: 400;
     letter-spacing: 1px;
     transition: all 0.3s linear;
+
     &:hover {
       color: rgb(220, 51, 51);
     }
   }
+
   &__contact {
     display: flex;
     flex-direction: column;
@@ -42,6 +71,7 @@
     font-weight: 200;
     color: rgba(0, 0, 0, 0.6);
   }
+
   &__copy {
     background-color: black;
     width: 100%;
@@ -51,10 +81,34 @@
     align-items: center;
     justify-content: center;
   }
+
   &__copywrapper {
     width: 1100px;
     display: flex;
     font-weight: 100;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      width: 90%; // Responsive width
+    }
+  }
+}
+
+// Responsive styles for devices with max width of 350px
+@media (max-width: 350px) {
+  .footer {
+    gap: 20px; // Adjust gap for smaller screens
+
+    &__wrapper {
+      width: 100%; // Full width on smallest devices
+    }
+
+    &__desc {
+      font-size: 15px; // Smaller font size
+    }
+
+    &__copy {
+      height: 40px; // Adjust height for smaller devices
+    }
   }
 }

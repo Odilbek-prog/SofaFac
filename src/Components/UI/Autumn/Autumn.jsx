@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Autumn = ({ data }) => {
   return (
@@ -12,10 +13,12 @@ const Autumn = ({ data }) => {
           {data
             .filter((item) => item.category === "Autumn collection")
             .map((item) => (
-              <div key={item.id} className="winter__card" data-aos="fade-up">
-                <img className="winter__img" src={item.img} alt="" />
-                <h3 className="winter__name">{item.name}</h3>
-              </div>
+              <NavLink className={"collection__links"} to={`/item/${item.id}`}>
+                <div key={item.id} className="winter__card" data-aos="fade-up">
+                  <img className="winter__img" src={item.img} alt="" />
+                  <h3 className="winter__name">{item.name.slice(0, 17)}</h3>
+                </div>
+              </NavLink>
             ))}
         </div>
       </div>

@@ -7,6 +7,7 @@ import Quality2 from "../Components/UI/Quality/Quality2";
 import Autumn from "../Components/UI/Autumn/Autumn";
 import Quality3 from "../Components/UI/Quality/Quality3";
 import Summer from "../Components/UI/Summer/Summer";
+import News from "../Components/UI/News/News";
 
 const Home = ({ data }) => {
   return (
@@ -19,6 +20,7 @@ const Home = ({ data }) => {
       <Autumn data={data} />
       <Quality3 />
       <Summer data={data} />
+      <News />
     </>
   );
 };
