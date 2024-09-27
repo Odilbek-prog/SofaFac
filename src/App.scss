@@ -83,9 +83,10 @@
 
 .contact {
   width: 100%;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
-  margin-bottom: 45px;
+  margin-bottom: 50px;
   @media (max-width: 768px) {
     width: 90%;
   }
@@ -130,6 +131,7 @@
     }
   }
   .map {
+    border: none;
     @media (max-width: 645px) {
       width: 500px;
     }
@@ -193,6 +195,7 @@
 
 .collection {
   width: 100%;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
@@ -292,12 +295,16 @@
     display: flex;
     justify-content: space-between;
   }
+  &__card {
+    height: 130px;
+  }
   &__sorting {
     border-radius: 25px;
     text-align: center;
   }
   &__img {
     width: 150px;
+    height: 110px;
     border-radius: 25px;
   }
   &__cards {

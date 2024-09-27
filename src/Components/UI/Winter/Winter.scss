@@ -17,7 +17,9 @@
       width: 90%; // Use a percentage for better responsiveness
     }
   }
-
+  &__card {
+    height: 220px;
+  }
   &__img {
     width: 200px;
     height: 200px;
