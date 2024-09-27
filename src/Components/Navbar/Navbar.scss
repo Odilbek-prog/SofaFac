@@ -13,13 +13,14 @@
     gap: 30px;
 
     @media (max-width: 768px) {
-      justify-content: space-between;
+      justify-content: space-evenly;
+      width: 80%;
     }
   }
 
   &__desc {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 80%;
 
     // @media (max-width: 768px) {

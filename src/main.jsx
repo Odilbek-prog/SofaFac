@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { ToastContainer } from "react-toastify";
 AOS.init();
 import "../node_modules/react-medium-image-zoom/dist/styles.css";
+import "animate.css/animate.compat.css";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>

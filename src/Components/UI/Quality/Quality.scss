@@ -22,6 +22,12 @@
       flex-direction: column; // Stack elements on smaller screens
       padding: 20px; // Add padding for spacing
     }
+
+    @media (max-width: 425px) {
+      width: 80%; // Responsive width
+      height: auto; // Allow height to adjust
+      // Add padding for spacing
+    }
   }
 
   &__desc {
