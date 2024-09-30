@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import glass from "../assets/img/glass.png";
 import { NavLink, useParams } from "react-router-dom";
 
@@ -70,6 +70,14 @@ const Collection = ({ data }) => {
     default:
       currentPageData = page1;
   }
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Filtrlash funksiyasi
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  console.log(filteredData);
 
   return (
     <div className="collection">
@@ -80,6 +88,8 @@ const Collection = ({ data }) => {
               type="text"
               className="collection__input"
               placeholder="Search for products"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
             <NavLink className={"collection__link"} to={"/collection"}>
               <button className="collection__btn">
@@ -134,7 +144,23 @@ const Collection = ({ data }) => {
             </select>
           </div>
           <div className="collection__cards">
-            {currentPageData.length ? (
+            {searchTerm.length ? (
+              filteredData.map((item) => {
+                return (
+                  <NavLink
+                    to={`/item/${item.id}`}
+                    className={"collection__links"}
+                  >
+                    <div key={item.id} className="collection__card">
+                      <img className="collection__img" src={item.img} alt="" />
+                      <p className="collection__name">
+                        {item.name.slice(0, 17)}
+                      </p>
+                    </div>
+                  </NavLink>
+                );
+              })
+            ) : currentPageData.length ? (
               currentPageData.map((item) => (
                 <NavLink
                   to={`/item/${item.id}`}
@@ -166,3 +192,16 @@ const Collection = ({ data }) => {
 };
 
 export default Collection;
+// currentPageData.length ? (
+//   currentPageData.map((item) => (
+//     <NavLink
+//       to={`/item/${item.id}`}
+//       className={"collection__links"}
+//     >
+//       <div key={item.id} className="collection__card">
+//         <img className="collection__img" src={item.img} alt="" />
+//         <p className="collection__name">{item.name.slice(0, 17)}</p>
+//       </div>
+//     </NavLink>
+//   ))
+// )
