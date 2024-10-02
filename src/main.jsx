@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify";
 AOS.init();
 import "../node_modules/react-medium-image-zoom/dist/styles.css";
 import "animate.css/animate.compat.css";
+import "./i18next.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
