@@ -1,6 +1,7 @@
 import React from "react";
 import sofa from "../../../assets/img/sofa3.png";
 import ScrollAnimation from "react-animate-on-scroll";
+import { NavLink } from "react-router-dom";
 
 const Quality2 = () => {
   return (
@@ -22,6 +23,9 @@ const Quality2 = () => {
               'Bukhara Natural Product' has been a company for many years
               producing cotton fabrics for use all over the world.
             </p>
+            <NavLink className="quality__btn" to={"/collection/page/autumn"}>
+              Collection
+            </NavLink>
           </div>
         </ScrollAnimation>
       </div>

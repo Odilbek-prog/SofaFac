@@ -2,6 +2,7 @@ import React from "react";
 import "./Quality.scss";
 import sofa from "../../../assets/img/sofa2.png";
 import ScrollAnimation from "react-animate-on-scroll";
+import { NavLink } from "react-router-dom";
 
 const Quality = () => {
   return (
@@ -23,6 +24,9 @@ const Quality = () => {
               'Bukhara Natural Product' has been a company for many years
               producing cotton fabrics for use all over the world.
             </p>
+            <NavLink className="quality__btn" to={"/collection/page/winter"}>
+              Collection
+            </NavLink>
           </div>
         </ScrollAnimation>
       </div>
@@ -31,6 +35,3 @@ const Quality = () => {
 };
 
 export default Quality;
-// data-aos="fade-right"
-// data-aos="fade-down"
-// data-aos="fade-left"

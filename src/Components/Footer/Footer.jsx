@@ -43,12 +43,22 @@ const Footer = () => {
         </div>
         <div className="footer__contact" data-aos="fade-up">
           <h3 className="footer__title">Contact</h3>
-          <p className="footer__address">Bukhara, st. Alpomysh 80.</p>
-          <p className="footer__address">Bnpuz@bk.ru</p>
+          <NavLink className={"footer__address"} to={""}>
+            Bukhara, st. Alpomysh 80.
+          </NavLink>
+          <NavLink className={"footer__address"} to={"mailto:Bnpuz@bk.ru"}>
+            Bnpuz@bk.ru
+          </NavLink>
           <p className="footer__address">bnp_fabrik</p>
-          <p className="footer__address">info@bnpfabric.com</p>
-          <p className="footer__address">+998 93 383 75 85</p>
-          <p className="footer__address">+998 93 960 78 00</p>
+          <NavLink className="footer__address" to={"info@bnpfabric.com"}>
+            info@bnpfabric.com
+          </NavLink>
+          <NavLink className="footer__address" to={"tel:+998 93 383 75 85"}>
+            +998 93 383 75 85
+          </NavLink>
+          <NavLink className="footer__address" to={"tel:+998 93 960 78 00"}>
+            +998 93 960 78 00
+          </NavLink>
         </div>
       </div>
       <div className="footer__copy">

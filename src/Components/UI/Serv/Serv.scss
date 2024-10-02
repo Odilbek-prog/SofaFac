@@ -9,12 +9,17 @@
     height: 200px;
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 
     @media (max-width: 768px) {
       flex-direction: column; // Stack cards vertically on smaller screens
       height: auto; // Allow height to adjust
       padding: 20px; // Add some padding for spacing
+    }
+    @media (max-width: 1050px) {
+      width: 95%; // Add some padding for spacing
     }
   }
 

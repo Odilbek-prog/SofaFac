@@ -16,9 +16,36 @@
     background-color: #59564f;
 
     @media (max-width: 768px) {
-      width: 90%; // Responsive width
-      height: auto; // Allow height to adjust
+      width: 90%;
+      height: auto; // Responsive width
       flex-direction: column; // Stack elements vertically
+    }
+    @media (max-width: 1115px) {
+      width: 100%; // Responsive width
+    }
+    @media (max-width: 1035px) {
+      width: 90%;
+    }
+    @media (max-width: 1050px) {
+      width: 95%;
+    }
+    @media (max-width: 1035px) {
+      width: 100% !important;
+    }
+    @media (max-width: 980px) {
+      width: 100% !important;
+    }
+    @media (max-width: 925px) {
+      width: 100% !important;
+    }
+    @media (max-width: 870px) {
+      width: 95% !important;
+    }
+    @media (max-width: 825px) {
+      width: 95% !important;
+    }
+    @media (max-width: 1024px) {
+      width: 95% !important;
     }
   }
 
@@ -34,14 +61,30 @@
       height: auto; // Auto height to maintain aspect ratio
       top: 0; // Reset position
     }
+    @media (max-width: 1115px) {
+      width: 500px;
+      height: 500px; // Responsive width
+    }
+    @media (max-width: 825px) {
+      width: 450px !important;
+      height: 450px;
+    }
+    @media (max-width: 450px) {
+      width: 350px !important;
+      height: 350px;
+    }
   }
 
   &__right {
     text-align: right;
+    margin-right: 30px;
 
     @media (max-width: 768px) {
       text-align: center; // Center text on smaller screens
       margin-top: 20px; // Add some space above
+    }
+    @media (max-width: 450px) {
+      margin-right: 0;
     }
   }
 
@@ -51,16 +94,35 @@
 
     &:nth-child(1) {
       font-size: 2.5rem;
+      @media (max-width: 1035px) {
+        font-size: 2rem !important;
+      }
+      @media (max-width: 825px) {
+        font-size: 1.5rem !important;
+      }
     }
 
     &:nth-child(2) {
       font-weight: 600;
-      font-size: 3.5rem;
+      font-size: 4.5rem;
+      @media (max-width: 1035px) {
+        font-size: 3rem !important;
+      }
+      @media (max-width: 825px) {
+        font-size: 2.5rem !important;
+      }
     }
 
     &:nth-child(3) {
       font-family: "Poppins", sans-serif;
-      font-size: 4.5rem;
+      font-weight: 900;
+      font-size: 6.5rem;
+      @media (max-width: 1035px) {
+        font-size: 4rem !important;
+      }
+      @media (max-width: 825px) {
+        font-size: 3.5rem !important;
+      }
     }
 
     @media (max-width: 768px) {

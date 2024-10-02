@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import glass from "../assets/img/glass.png";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Collection = ({ data }) => {
   const page1 = data.slice(0, 12);
@@ -91,7 +91,13 @@ const Collection = ({ data }) => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <NavLink className={"collection__link"} to={"/collection"}>
+            <NavLink
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+              className={"collection__link"}
+              to={"/collection"}
+            >
               <button className="collection__btn">
                 <img className="glass" src={glass} alt="" />
               </button>
@@ -192,16 +198,3 @@ const Collection = ({ data }) => {
 };
 
 export default Collection;
-// currentPageData.length ? (
-//   currentPageData.map((item) => (
-//     <NavLink
-//       to={`/item/${item.id}`}
-//       className={"collection__links"}
-//     >
-//       <div key={item.id} className="collection__card">
-//         <img className="collection__img" src={item.img} alt="" />
-//         <p className="collection__name">{item.name.slice(0, 17)}</p>
-//       </div>
-//     </NavLink>
-//   ))
-// )

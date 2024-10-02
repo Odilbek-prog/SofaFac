@@ -41,6 +41,9 @@ import garden from "../assets/img/garden.jpeg";
 import Marquis from "../assets/img/feather.jpeg";
 import roses from "../assets/img/roses.jpeg";
 import Item from "../Pages/Item";
+import Gadgets1 from "../Pages/Gadgets1";
+import Gadgets2 from "../Pages/Gadgets2";
+import Gadgets3 from "../Pages/Gadgets3";
 
 const data = [
   {
@@ -493,6 +496,9 @@ const Router = () => {
       />
       <Route path="/item/:id" element={<Item data={data} />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/gadgets1" element={<Gadgets1 />} />
+      <Route path="/gadgets2" element={<Gadgets2 />} />
+      <Route path="/gadgets3" element={<Gadgets3 />} />
       <Route path="*" element={<Notfound />} />
     </Routes>
   );
