@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [text, setText] = useState("");
@@ -50,13 +52,13 @@ const Contact = () => {
       <div className="contact__wrapper">
         <div className="contact__top">
           <form className="contact__form" onSubmit={handleSubmit}>
-            <h1 className="contact__title">Contact</h1>
+            <h1 className="contact__title">{t("Contact")}</h1>
             <input
               className="contact__input"
               type="email"
               value={email}
               onChange={handleEmail}
-              placeholder="Your E-mail"
+              placeholder={t("Your E-mail")}
               required
             />
             <input
@@ -65,15 +67,15 @@ const Contact = () => {
               value={number}
               onChange={handleNumber}
               required
-              placeholder="Phone number"
+              placeholder={t("Phone number")}
             />
             <textarea
               value={text}
               onChange={handleText}
               className="contact__message"
-              placeholder="Your message here"
+              placeholder={t("Your message here")}
             />
-            <button className="contact__btn">Submit</button>
+            <button className="contact__btn">{t("Submit")}</button>
           </form>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d902.7215754102206!2d64.460005!3d39.747386!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDQ0JzUwLjgiTiA2NMKwMjcnMzUuOSJF!5e1!3m2!1sen!2sus!4v1727288605378!5m2!1sen!2sus"

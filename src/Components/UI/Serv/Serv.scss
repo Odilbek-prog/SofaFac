@@ -22,6 +22,9 @@
       width: 95%; // Add some padding for spacing
     }
   }
+  &__text {
+    width: 140px;
+  }
 
   &__card {
     display: flex;

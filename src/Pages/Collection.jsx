@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import glass from "../assets/img/glass.png";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Collection = ({ data }) => {
+  const { t } = useTranslation();
+
   const page1 = data.slice(0, 12);
   const page2 = data.slice(12, 24);
   const page3 = data.slice(24, 30);
@@ -53,7 +56,7 @@ const Collection = ({ data }) => {
       break;
     case "autumn":
       currentPageData = autumn;
-      total = "1";
+      total = "10";
       break;
     case "1":
       currentPageData = page1;
@@ -76,8 +79,6 @@ const Collection = ({ data }) => {
   const filteredData = data.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  console.log(filteredData);
 
   return (
     <div className="collection">
@@ -104,49 +105,57 @@ const Collection = ({ data }) => {
             </NavLink>
           </form>
           <div className="collection__select">
-            <h3 className="collection__subtitle">Collection</h3>
-            <NavLink className={"collection__links"} to={"/collection/page/1"}>
-              All
+            <h3 className="collection__subtitle">{t("Collection")}</h3>
+            <NavLink
+              onClick={() => {
+                setSearchTerm("");
+              }}
+              className={"collection__links"}
+              to={"/collection/page/1"}
+            >
+              {t("All")}
             </NavLink>
             <NavLink
               className={"collection__links"}
               to={"/collection/page/spring"}
             >
-              Spring Collection
+              {t("Spring")}
             </NavLink>
             <NavLink
               className={"collection__links"}
               to={"/collection/page/winter"}
             >
-              Winter Collection
+              {t("Winter")}
             </NavLink>
             <NavLink
               className={"collection__links"}
               to={"/collection/page/summer"}
             >
-              Summer Collection
+              {t("Summer")}
             </NavLink>
             <NavLink
               className={"collection__links"}
               to={"/collection/page/autumn"}
             >
-              Autumn Collection
+              {t("Autumn")}
             </NavLink>
           </div>
         </div>
         <div className="collection__right">
           <div className="collection__right__top">
             <div className="collection__desc">
-              <h1 className="collection__title">Collection</h1>
-              <p className="collection__num">Showing {total} of 30</p>
+              <h1 className="collection__title">{t("Collection")}</h1>
+              <p className="collection__num">
+                {t("Showing")} {total} of 30
+              </p>
             </div>
             <select className="collection__sorting">
-              <option value="default">Initial sorting</option>
-              <option value="popularity">By popularity</option>
-              <option value="rating">By rating</option>
-              <option value="newest">By newest</option>
-              <option value="price-low">Price: ascending</option>
-              <option value="price-high">Price: descending</option>
+              <option value="default">{t("Initial sorting")}</option>
+              <option value="popularity">{t("By popularity")}</option>
+              <option value="rating">{t("By rating")}</option>
+              <option value="newest">{t("By newest")}</option>
+              <option value="price-low">{t("Price: ascending")}</option>
+              <option value="price-high">{t("Price: descending")}</option>
             </select>
           </div>
           <div className="collection__cards">
@@ -184,7 +193,7 @@ const Collection = ({ data }) => {
               </div>
             )}
           </div>
-          {location.length == 1 ? (
+          {searchTerm.length > 0 ? null : currentPageData.length > 10 ? (
             <div className="pagination">
               <NavLink to={"/collection/page/1"}>1</NavLink>
               <NavLink to={"/collection/page/2"}>2</NavLink>

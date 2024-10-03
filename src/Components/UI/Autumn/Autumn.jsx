@@ -1,12 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 const Autumn = ({ data }) => {
+  const { t } = useTranslation();
   return (
     <div className="winter">
       <div className="winter__wrapper">
         <div className="winter__desc">
-          <h2 className="winter__title">Autumn collection</h2>
+          <h2 className="winter__title">{t("Autumn")}</h2>
           <p className="winter__text">Bukhara Natural Product</p>
         </div>
         <div className="winter__cards">

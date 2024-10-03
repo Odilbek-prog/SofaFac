@@ -17,10 +17,7 @@
     transition: all 0.5s;
     cursor: default;
     &:hover {
-      box-shadow: rgba(255, 0, 0, 0.199) 0px 1px 2px,
-        rgba(255, 0, 0, 0.3) 0px 2px 4px, rgba(255, 0, 0, 0.241) 0px 4px 8px,
-        rgba(254, 2, 2, 0.271) 0px 8px 16px,
-        rgba(255, 0, 0, 0.224) 0px 16px 32px, rgb(0, 0, 0) 0px 32px 64px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     @media (max-width: 768px) {

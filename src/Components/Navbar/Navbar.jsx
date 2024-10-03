@@ -6,19 +6,12 @@ import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
-  const handleToggle = () => {
-    setIsOpen((prevState) => !prevState); // Toggle the state
-  };
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
-  const { t } = useTranslation();
-
-  const [lang, setLang] = useState("");
-
-  const handleLang = (e) => {
-    const selectedLang = e?.target?.value;
-    setLang(selectedLang);
-    console.log(lang);
+  const changeLanguage = (e) => {
+    i18n.changeLanguage(e.target.value);
   };
 
   return (
@@ -30,46 +23,50 @@ const Navbar = () => {
         <div className="navbar__desc">
           <ul className={`navbar__ul ${isOpen ? "show" : ""}`}>
             <li className="navbar__list">
-              <NavLink onClick={handleToggle} to="/" className="navbar__link">
-                Home
+              <NavLink onClick={toggleMenu} to="/" className="navbar__link">
+                {t("Home")}
               </NavLink>
             </li>
             <li className="navbar__list">
               <NavLink
-                onClick={handleToggle}
+                onClick={toggleMenu}
                 to="/collection/page/1"
                 className="navbar__link"
               >
-                Collection
+                {t("Collection")}
               </NavLink>
             </li>
             <li className="navbar__list">
               <NavLink
-                onClick={handleToggle}
+                onClick={toggleMenu}
                 to="/about"
                 className="navbar__link"
               >
-                About Us
+                {t("About Us")}
               </NavLink>
             </li>
             <li className="navbar__list">
               <NavLink
-                onClick={handleToggle}
+                onClick={toggleMenu}
                 to="/contact"
                 className="navbar__link"
               >
-                Contact
+                {t("Contact")}
               </NavLink>
             </li>
           </ul>
-          <select onChange={handleLang} className="navbar__lang">
+          <select
+            onChange={changeLanguage}
+            className="navbar__lang"
+            defaultValue={i18n.language}
+          >
             <option value="en">Eng</option>
             <option value="ru">Rus</option>
             <option value="uz">Uzb</option>
             <option value="po">Pol</option>
           </select>
         </div>
-        <div className="navbar__hamburger" onClick={handleToggle}>
+        <div className="navbar__hamburger" onClick={toggleMenu}>
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>

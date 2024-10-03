@@ -2,8 +2,10 @@ import React, { useCallback, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { Zoom } from "react-toastify";
 import { Controlled as ControlledZoom } from "react-medium-image-zoom";
+import { useTranslation } from "react-i18next";
 
 const Item = ({ data }) => {
+  const { t } = useTranslation();
   const [isZoomed, setIsZoomed] = useState(false);
 
   const handleZoomChange = useCallback((shouldZoom) => {
@@ -31,41 +33,41 @@ const Item = ({ data }) => {
         <div className="item__right">
           <h1 className="item__title">{name}</h1>
           <table className="item__desc">
-            <tr>
-              <td>Material:</td>
-              <td>{Material}</td>
-            </tr>
-            <tr>
-              <td>Pillowcase:</td>
-              <td>{Pillowcase}</td>
-            </tr>
-            <tr>
-              <td>Sheet:</td>
-              <td>{sheet}</td>
-            </tr>
-            <tr>
-              <td>Duvet cover:</td>
-              <td>{Duvet}</td>
-            </tr>
-            <tr>
-              <td>Size:</td>
-              <td>{Size}</td>
-            </tr>
-            <tr>
-              <td>Manufacturer:</td>
-              <td>{Manufacturer}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>{t("Material")}</td>
+                <td>{Material}</td>
+              </tr>
+              <tr>
+                <td>{t("Pillowcase")}</td>
+                <td>{Pillowcase}</td>
+              </tr>
+              <tr>
+                <td>{t("Sheet")}</td>
+                <td>{sheet}</td>
+              </tr>
+              <tr>
+                <td>{t("Duvet")}</td>
+                <td>{Duvet}</td>
+              </tr>
+              <tr>
+                <td>{t("Size")}</td>
+                <td>{Size}</td>
+              </tr>
+              <tr>
+                <td>{t("Manufacturer")}</td>
+                <td>{Manufacturer}</td>
+              </tr>
+            </tbody>
           </table>
           <p className="item__category">
-            Category:{" "}
-            {
-              <NavLink
-                className={"item__link"}
-                to={`/collection/page/${categorylink}`}
-              >
-                {category}
-              </NavLink>
-            }
+            {t("Category")}{" "}
+            <NavLink
+              className={"item__link"}
+              to={`/collection/page/${categorylink}`}
+            >
+              {category}
+            </NavLink>
           </p>
         </div>
       </div>

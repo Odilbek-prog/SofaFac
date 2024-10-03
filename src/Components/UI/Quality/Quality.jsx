@@ -3,29 +3,29 @@ import "./Quality.scss";
 import sofa from "../../../assets/img/sofa2.png";
 import ScrollAnimation from "react-animate-on-scroll";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Quality = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="quality">
       <div className="quality__wrapper">
         <ScrollAnimation animateIn="fadeInRight" duration={0.5}>
           <div className="quality__desc">
             <h1 className="quality__subtitle">100%</h1>
-            <p className="quality__text">Quality of material</p>
+            <p className="quality__text">{t("Quality of material")}</p>
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInDown" duration={0.5}>
-          <img className="quality__img" src={sofa} alt="" />
+          <img className="quality__img" src={sofa} alt={t("Sofa image")} />
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" duration={0.5}>
           <div className="quality__right">
-            <h3 className="quality__title">'Bukhara Natural Product'</h3>
-            <p className="quality__text">
-              'Bukhara Natural Product' has been a company for many years
-              producing cotton fabrics for use all over the world.
-            </p>
+            <h3 className="quality__title">{t("Bukhara Natural Product")}</h3>
+            <p className="quality__text">{t("yes")}</p>
             <NavLink className="quality__btn" to={"/collection/page/winter"}>
-              Collection
+              {t("Collection")}
             </NavLink>
           </div>
         </ScrollAnimation>
